@@ -21,16 +21,41 @@ function About({ aboutRef }) {
         </ImageContainer>
         <TextContainer>
           <Paragraph>
-            Ciao! sono Simone Borin, Web Developer e
-            Designer.
+            Sono Simone Borin, un Web Developer e Designer
+            con una solida formazione ottenuta tramite
+            l'università online di Start2Impact e numerosi
+            corsi di specializzazione.
           </Paragraph>
           <Paragraph>
-            La mia formazione deriva dall’universita online
-            di Start2Impact più numerosi corsi.
+            <span>Competenze Tecniche:</span>
+            Le mie competenze spaziano dall'HTML5 avanzato
+            al CSS3 e al framework ReactJS. Utilizzo queste
+            tecnologie per creare esperienze web
+            coinvolgenti e moderne.
           </Paragraph>
           <Paragraph>
-            Le mie conoscenze comprendono: HTML5 avanzato,
-            CSS3, ReactJS.
+            <span>Passione per il Disegno Creativo:</span>
+            Al di là del coding, nutro una grande passione
+            per il disegno creativo. Sono abile
+            nell'utilizzo di strumenti come Photoshop,
+            Illustrator, e Procreate per creare grafiche
+            accattivanti e manipolare immagini.
+          </Paragraph>
+          <Paragraph>
+            <span>Utilizzo di Strumenti di Design:</span>
+            Sfrutto Figma per il design, un potente
+            strumento di prototipazione, per creare
+            interfacce utente intuitive e ben progettate.
+          </Paragraph>
+          <Paragraph>
+            <span>
+              Sinergia tra Competenze Tecniche e Creatività:
+            </span>
+            Questa sinergia tra le mie competenze tecniche e
+            la mia creatività nel design mi consente di
+            realizzare progetti digitali di alta qualità che
+            combinano estetica e funzionalità in modo
+            armonioso.
           </Paragraph>
         </TextContainer>
       </Section>
@@ -145,12 +170,21 @@ const Paragraph = styled.p`
   text-align: center;
   font-size: 1.1rem;
   color: white;
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
 `;
 
 const SkillGrid = styled.img`
   /* width: 60vw; */
   @media (min-width: 700px) {
     width: 60vw;
+  }
+  @media (min-width: 1024px) {
+    width: 40vw;
   }
 `;
 const InterestText = styled.div`

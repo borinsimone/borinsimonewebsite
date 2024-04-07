@@ -11,5 +11,23 @@ text-decoration: none;
     font-size: 24px;
 }
 }
+body{
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+    width: 6px;
+}
+
+&::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    width: 6px;
+}
+
+&::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 100px;
+    width: 6px;
+}
+}
 
 `;

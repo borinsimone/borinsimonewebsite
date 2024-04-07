@@ -10,6 +10,7 @@ import {
   FaChevronCircleUp,
   FaChevronUp,
 } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa6";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,10 +44,8 @@ function App() {
           })
         }
       >
-        <ChevronIcon />
-        back
-        <span>to</span>
-        top
+        <ArrowIcon />
+        <span>top</span>
       </BackToTop>
     </Container>
   );
@@ -63,34 +62,36 @@ const Container = styled.div`
   overflow: hidden;
 `;
 const BackToTop = styled.div`
+  cursor: pointer;
   position: fixed;
   top: 90svh;
-  right: 20px;
-  height: 5rem;
-  aspect-ratio: 1;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 50%;
+  /* right: -70px; */
+  right: ${(props) => (props.visible ? "-120px" : "-70px")};
   opacity: ${(props) => (props.visible ? 0 : 1)};
-  transition: opacity 300ms ease-in-out;
   background: -webkit-linear-gradient(
     120deg,
     rgba(64, 180, 118, 1) 0%,
     rgba(44, 211, 201, 1) 100%
   );
-  text-align: center;
-  line-height: 0.9rem;
-  color: #fff;
   text-transform: uppercase;
-  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0;
+  padding-right: 20px;
+  border-radius: 10px 0 0 10px;
+  color: white;
+  width: 120px;
+  transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: -4px 4px 10px rgba(44, 211, 201, 0.4);
+  &:hover {
+    right: -20px;
+  }
+
   span {
-    font-size: 0.6rem;
+    width: 50px;
   }
 `;
-const ChevronIcon = styled(FaChevronUp)`
-  position: absolute;
-  top: 5px;
+const ArrowIcon = styled(FaArrowUp)`
+  width: 50px;
 `;

@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import sudokuImg from "../../asset/SudokuBreakerIcon.svg";
-function Projects({ contactRef }) {
+function Projects({ projectRef }) {
   return (
-    <Container ref={contactRef}>
+    <Container ref={projectRef}>
       <Title>alcuni dei miei lavori</Title>
       <Card
         category="coding"

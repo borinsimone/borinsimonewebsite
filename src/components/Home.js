@@ -62,18 +62,35 @@ function Home({
           animate={{ y: -0 }}
           exit={{ y: -100 }}
         >
-          <IconContainer>
+          <IconContainer
+            href="https://www.instagram.com/borin__simone/"
+            target="_blank"
+          >
             <InstaIcon />
           </IconContainer>
           <Line />
-          <IconContainer>
+          <IconContainer href="" target="_blank">
             <LinkedIcon />
           </IconContainer>
           <Line />
-          <IconContainer>
+          <IconContainer href="" target="_blank">
             <FacebookIcon />
           </IconContainer>
         </SocialLinks>
+        <DesktopLinks>
+          {menuLinks.map((item, i) => (
+            <DesktopLinksItem
+              key={i}
+              onClick={() => {
+                item.ref.current.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            >
+              {item.name}
+            </DesktopLinksItem>
+          ))}
+        </DesktopLinks>
         <AnimatePresence>
           {menuOpen ? (
             <MenuIconContainer
@@ -127,61 +144,63 @@ function Home({
         )}
       </AnimatePresence>
       <Body>
-        <Text>
-          Ciao!
-          <HandEmoji src={helloimg} />
-          Io sono
-        </Text>
-        <Text>
-          <span>Simone Borin</span>
-        </Text>
-        <SubText>
-          FrontEnd Developer & UX/UI Designer
-        </SubText>
-        <BtnContainer>
-          <Btn
-            as={motion.div}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() =>
-              aboutRef.current.scrollIntoView({
-                behavior: "smooth",
-              })
-            }
-          >
-            scopri di più
-          </Btn>
-          <BtnContact
-            as={motion.div}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() =>
-              contactRef.current.scrollIntoView({
-                behavior: "smooth",
-              })
-            }
-          >
-            <div>
-              <span>Contattami</span>
-            </div>
-          </BtnContact>
-        </BtnContainer>
+        <span className="textConatiner">
+          <Text>
+            Ciao!
+            <HandEmoji src={helloimg} />
+            Io sono
+          </Text>
+          <Text>
+            <span>Simone Borin</span>
+          </Text>
+          <SubText>
+            FrontEnd Developer & UX/UI Designer
+          </SubText>
+          <BtnContainer>
+            <Btn
+              as={motion.div}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() =>
+                aboutRef.current.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+            >
+              scopri di più
+            </Btn>
+            <BtnContact
+              as={motion.div}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() =>
+                contactRef.current.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+            >
+              <div>
+                <span>Contattami</span>
+              </div>
+            </BtnContact>
+          </BtnContainer>
+        </span>
+        <HomeBg
+          src={avatar}
+          as={motion.img}
+          initial={{ y: 400 }}
+          animate={{ y: -0 }}
+          exit={{ y: 400 }}
+          transition={{ delay: 1 }}
+        />
       </Body>
-      <HomeBg
-        src={avatar}
-        as={motion.img}
-        initial={{ y: 400 }}
-        animate={{ y: -0 }}
-        exit={{ y: 400 }}
-        transition={{ delay: 1 }}
-      />
     </Container>
   );
 }
 
 export default Home;
 const Container = styled.div`
-  width: 100%;
+  /* width: 100%;
   height: 100vh;
   height: 100svh;
   background-color: #21242a;
@@ -190,20 +209,50 @@ const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-`;
-const Navbar = styled.nav`
+  align-items: center; */
+
+  background-color: #21242a;
+  height: 100svh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  position: relative;
+  padding: 10px;
+  /* overflow: hidden; */
+`;
+const Navbar = styled.nav`
+  display: flex;
+  width: 100%;
   justify-content: space-between;
-  z-index: 100;
+  align-items: center;
+  font-family: var(--primary-text);
+  z-index: 102;
+  overflow: hidden;
+  position: relative;
+`;
+const DesktopLinks = styled.div`
+  @media (max-width: 1025px) {
+    display: none;
+  }
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10%;
+  list-style-type: none;
+  position: absolute;
+  left: 30%;
+  width: 40%;
+`;
+const DesktopLinksItem = styled.div`
+  text-transform: capitalize;
+  cursor: pointer;
+  color: white;
 `;
 const SocialLinks = styled.div`
   display: flex;
   align-items: center;
 `;
-const IconContainer = styled.div`
+const IconContainer = styled.a`
   border: 2px solid white;
   height: 2.5rem;
   aspect-ratio: 1;
@@ -211,6 +260,9 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  /* @media (min-width: 760px) {
+    height: 1.8rem;
+  } */
 `;
 const Line = styled.div`
   width: 10px;
@@ -220,14 +272,23 @@ const Line = styled.div`
 const InstaIcon = styled(AiFillInstagram)`
   color: white;
   font-size: 1.8rem;
+  /* @media (min-width: 760px) {
+    font-size: 1.2rem;
+  } */
 `;
 const LinkedIcon = styled(AiFillLinkedin)`
   color: white;
   font-size: 1.8rem;
+  /* @media (min-width: 760px) {
+    font-size: 1.2rem;
+  } */
 `;
 const FacebookIcon = styled(AiFillFacebook)`
   color: white;
   font-size: 1.8rem;
+  /* @media (min-width: 760px) {
+    font-size: 1.2rem;
+  } */
 `;
 const MenuIcon = styled(CiMenuFries)`
   color: white;
@@ -240,7 +301,11 @@ const MenuCloseIcon = styled(AiOutlineClose)`
   font-size: 1.8rem;
   stroke-width: 2px;
 `;
-const MenuIconContainer = styled.div``;
+const MenuIconContainer = styled.div`
+  @media (min-width: 1025px) {
+    display: none;
+  }
+`;
 const MenuLinkContainer = styled.div`
   height: 100%;
   width: 100%;
@@ -266,21 +331,24 @@ const MenuLink = styled.div`
   font-size: 1.7rem;
 `;
 const HomeBg = styled.img`
-  width: 90%;
-  opacity: 0.7;
-  position: absolute;
-  bottom: 0svh;
-  z-index: 0;
   @media (min-width: 700px) {
-    width: 60%;
+  }
+  @media (min-width: 1025px) {
   }
 `;
 const Body = styled.div`
+  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 50%;
   justify-content: center;
-  z-index: 10;
+  gap: 5svh;
+  align-items: center;
+  @media (min-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
+  }
 `;
 const Text = styled.div`
   color: white;
@@ -323,6 +391,7 @@ const Btn = styled.div`
   align-items: center;
   border-radius: 6px;
   text-transform: uppercase;
+  cursor: pointer;
   background: -webkit-linear-gradient(
     0deg,
     rgba(64, 180, 118, 1) 0%,
@@ -331,13 +400,6 @@ const Btn = styled.div`
 `;
 const BtnContact = styled(Btn)`
   border-radius: 10px;
-  /* border: 4px solid transparent;
-  border-image: linear-gradient(
-      120deg,
-      rgba(64, 180, 118, 1) 0%,
-      rgba(44, 211, 201, 1) 100%
-    )
-    10; */
 
   background: -webkit-linear-gradient(
     120deg,

@@ -1,4 +1,5 @@
-import React from "react";
+import { useInView } from "framer-motion";
+import React, { useRef } from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "usehooks-ts";
 function Services({ servicesRef }) {
@@ -6,16 +7,22 @@ function Services({ servicesRef }) {
   const tabletSize = useMediaQuery("(min-width: 768px)");
   const desktopSize = useMediaQuery("(min-width: 1025px)");
 
+  const firstSectionRef = useRef(null);
+  const firstSectionInView = useInView(firstSectionRef);
+  const secondSectionRef = useRef(null);
+  const secondSectionInView = useInView(secondSectionRef);
+  const thirdSectionRef = useRef(null);
+  const thirdSectionInView = useInView(thirdSectionRef);
   return (
     <Container ref={servicesRef}>
       <Title>servizi</Title>
-      <div>
+      {/* <div>
         {mobileSize && "mobile size"}
         {tabletSize && "tablet size"}
         {desktopSize && "desktop size"}
-      </div>
+      </div> */}
       {mobileSize && (
-        <ServicesContainer>
+        <MobileServicesContainer>
           <ServiceBox>
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
@@ -28,11 +35,21 @@ function Services({ servicesRef }) {
           </ServiceBox>
           <ServiceBox></ServiceBox>
           <ServiceBox></ServiceBox>
-        </ServicesContainer>
+        </MobileServicesContainer>
       )}
       {tabletSize && (
         <ServicesContainerTablet>
-          <ServiceBox main={true}>
+          <ServiceBox
+            main={true}
+            ref={firstSectionRef}
+            style={{
+              transform: firstSectionInView
+                ? "none"
+                : "translateY(200px)",
+              opacity: firstSectionInView ? 1 : 0,
+              transition: "500ms ease-out",
+            }}
+          >
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
             <ServiceText>
@@ -42,8 +59,28 @@ function Services({ servicesRef }) {
               assumenda placeat ea eos.
             </ServiceText>
           </ServiceBox>
-          <ServiceBox side={true}></ServiceBox>
-          <ServiceBox side={true}></ServiceBox>
+          <ServiceBox
+            side={true}
+            ref={secondSectionRef}
+            style={{
+              transform: secondSectionInView
+                ? "none"
+                : "translateY(200px)",
+              opacity: secondSectionInView ? 1 : 0,
+              transition: "500ms ease-out",
+            }}
+          ></ServiceBox>
+          <ServiceBox
+            side={true}
+            ref={thirdSectionRef}
+            style={{
+              transform: thirdSectionInView
+                ? "none"
+                : "translateY(200px)",
+              opacity: thirdSectionInView ? 1 : 0,
+              transition: "500ms ease-out",
+            }}
+          ></ServiceBox>
           <Line />
         </ServicesContainerTablet>
       )}
@@ -77,7 +114,7 @@ const Title = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
-const ServicesContainer = styled.div`
+const MobileServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -85,7 +122,7 @@ const ServicesContainer = styled.div`
   align-items: center;
 `;
 const ServiceBox = styled.div`
-  width: 80%;
+  width: 70%;
   aspect-ratio: 1;
   background: -webkit-linear-gradient(
     -60deg,
@@ -100,6 +137,7 @@ const ServiceBox = styled.div`
   gap: 10px;
   font-size: 1.4rem;
   font-weight: 900;
+  align-items: center;
   @media (min-width: 700px) {
     width: 40%;
     &:nth-child(odd) {
@@ -122,6 +160,7 @@ const ServiceTitle = styled.div`
 const ServiceText = styled.div`
   font-weight: 400 !important;
   color: white;
+  text-align: center;
 `;
 const ServicesContainerTablet = styled.div`
   width: 100%;

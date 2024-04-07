@@ -76,6 +76,9 @@ const Range = styled.div`
 `;
 const Label = styled.div`
   color: white;
+  @media (min-width: 700px) {
+    font-size: 0.8rem !important;
+  }
 `;
 const Input = styled.input`
   all: unset;
