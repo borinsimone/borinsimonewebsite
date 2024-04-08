@@ -1,11 +1,11 @@
-import { useInView } from "framer-motion";
-import React, { useRef } from "react";
-import styled, { css } from "styled-components";
-import { useMediaQuery } from "usehooks-ts";
+import { useInView } from 'framer-motion';
+import React, { useRef } from 'react';
+import styled, { css } from 'styled-components';
+import { useMediaQuery } from 'usehooks-ts';
 function Services({ servicesRef }) {
-  const mobileSize = useMediaQuery("(max-width: 768px)");
-  const tabletSize = useMediaQuery("(min-width: 768px)");
-  const desktopSize = useMediaQuery("(min-width: 1025px)");
+  const mobileSize = useMediaQuery('(max-width: 768px)');
+  const tabletSize = useMediaQuery('(min-width: 768px)');
+  const desktopSize = useMediaQuery('(min-width: 1025px)');
 
   const firstSectionRef = useRef(null);
   const firstSectionInView = useInView(firstSectionRef);
@@ -27,10 +27,9 @@ function Services({ servicesRef }) {
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
             <ServiceText>
-              Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Odit non saepe maxime
-              officia dignissimos. Exercitationem numquam
-              assumenda placeat ea eos.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit non
+              saepe maxime officia dignissimos. Exercitationem numquam assumenda
+              placeat ea eos.
             </ServiceText>
           </ServiceBox>
           <ServiceBox></ServiceBox>
@@ -43,42 +42,35 @@ function Services({ servicesRef }) {
             main={true}
             ref={firstSectionRef}
             style={{
-              transform: firstSectionInView
-                ? "none"
-                : "translateY(200px)",
+              transform: firstSectionInView ? 'none' : 'translateY(200px)',
               opacity: firstSectionInView ? 1 : 0,
-              transition: "500ms ease-out",
+              transition: '500ms ease-out',
             }}
           >
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
             <ServiceText>
-              Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Odit non saepe maxime
-              officia dignissimos. Exercitationem numquam
-              assumenda placeat ea eos.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit non
+              saepe maxime officia dignissimos. Exercitationem numquam assumenda
+              placeat ea eos.
             </ServiceText>
           </ServiceBox>
           <ServiceBox
             side={true}
             ref={secondSectionRef}
             style={{
-              transform: secondSectionInView
-                ? "none"
-                : "translateY(200px)",
+              transform: secondSectionInView ? 'none' : 'translateY(200px)',
               opacity: secondSectionInView ? 1 : 0,
-              transition: "500ms ease-out",
+              transition: '500ms ease-out',
             }}
           ></ServiceBox>
           <ServiceBox
             side={true}
             ref={thirdSectionRef}
             style={{
-              transform: thirdSectionInView
-                ? "none"
-                : "translateY(200px)",
+              transform: thirdSectionInView ? 'none' : 'translateY(200px)',
               opacity: thirdSectionInView ? 1 : 0,
-              transition: "500ms ease-out",
+              transition: '500ms ease-out',
             }}
           ></ServiceBox>
           <Line />

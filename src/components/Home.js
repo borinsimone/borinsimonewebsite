@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import {
   AiFillFacebook,
   AiFillInstagram,
   AiFillLinkedin,
   AiOutlineClose,
-} from "react-icons/ai";
-import { CiMenuFries } from "react-icons/ci";
-import {
-  AnimatePresence,
-  delay,
-  motion,
-} from "framer-motion";
-import image from "../asset/Group 78bg.png";
-import helloimg from "../asset/Waving Hand Emoji.png";
-import avatar from "../asset/Group 86.png";
+} from 'react-icons/ai';
+import { CiMenuFries } from 'react-icons/ci';
+import { AnimatePresence, delay, motion } from 'framer-motion';
+import image from '../asset/Group 78bg.png';
+import helloimg from '../asset/Waving Hand Emoji.png';
+import avatar from '../asset/Group 86.png';
 function Home({
   menuOpen,
   setMenuOpen,
@@ -27,23 +23,23 @@ function Home({
 }) {
   let menuLinks = [
     {
-      name: "home",
+      name: 'home',
       ref: homeRef,
     },
     {
-      name: "about",
+      name: 'about',
       ref: aboutRef,
     },
     {
-      name: "progetti",
-      ref: projectRef,
-    },
-    {
-      name: "servizi",
+      name: 'servizi',
       ref: servicesRef,
     },
     {
-      name: "contatti",
+      name: 'progetti',
+      ref: projectRef,
+    },
+    {
+      name: 'contatti',
       ref: contactRef,
     },
   ];
@@ -63,17 +59,23 @@ function Home({
           exit={{ y: -100 }}
         >
           <IconContainer
-            href="https://www.instagram.com/borin__simone/"
-            target="_blank"
+            href='https://www.instagram.com/borin__simone/'
+            target='_blank'
           >
             <InstaIcon />
           </IconContainer>
           <Line />
-          <IconContainer href="" target="_blank">
+          <IconContainer
+            href=''
+            target='_blank'
+          >
             <LinkedIcon />
           </IconContainer>
           <Line />
-          <IconContainer href="" target="_blank">
+          <IconContainer
+            href=''
+            target='_blank'
+          >
             <FacebookIcon />
           </IconContainer>
         </SocialLinks>
@@ -83,7 +85,7 @@ function Home({
               key={i}
               onClick={() => {
                 item.ref.current.scrollIntoView({
-                  behavior: "smooth",
+                  behavior: 'smooth',
                 });
               }}
             >
@@ -132,7 +134,7 @@ function Home({
                 key={link}
                 onClick={() => {
                   link.ref.current.scrollIntoView({
-                    behavior: "smooth",
+                    behavior: 'smooth',
                   });
                   setMenuOpen(false);
                 }}
@@ -144,7 +146,7 @@ function Home({
         )}
       </AnimatePresence>
       <Body>
-        <span className="textConatiner">
+        <span className='textConatiner'>
           <Text>
             Ciao!
             <HandEmoji src={helloimg} />
@@ -153,9 +155,7 @@ function Home({
           <Text>
             <span>Simone Borin</span>
           </Text>
-          <SubText>
-            FrontEnd Developer & UX/UI Designer
-          </SubText>
+          <SubText>FrontEnd Developer & UX/UI Designer</SubText>
           <BtnContainer>
             <Btn
               as={motion.div}
@@ -163,7 +163,7 @@ function Home({
               whileTap={{ scale: 0.9 }}
               onClick={() =>
                 aboutRef.current.scrollIntoView({
-                  behavior: "smooth",
+                  behavior: 'smooth',
                 })
               }
             >
@@ -175,7 +175,7 @@ function Home({
               whileTap={{ scale: 0.9 }}
               onClick={() =>
                 contactRef.current.scrollIntoView({
-                  behavior: "smooth",
+                  behavior: 'smooth',
                 })
               }
             >

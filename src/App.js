@@ -1,16 +1,13 @@
-import styled from "styled-components";
-import Home from "./components/Home";
-import About from "./components/about/About";
-import Services from "./components/services/Services";
-import Projects from "./components/projects/Projects";
-import Contact from "./components/contact/Contact";
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
-import {
-  FaChevronCircleUp,
-  FaChevronUp,
-} from "react-icons/fa";
-import { FaArrowUp } from "react-icons/fa6";
+import styled from 'styled-components';
+import Home from './components/Home';
+import About from './components/about/About';
+import Services from './components/services/Services';
+import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
+import { FaChevronCircleUp, FaChevronUp } from 'react-icons/fa';
+import { FaArrowUp } from 'react-icons/fa6';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +37,7 @@ function App() {
         visible={homeInView}
         onClick={() =>
           homeRef.current.scrollIntoView({
-            behavior: "smooth",
+            behavior: 'smooth',
           })
         }
       >
@@ -66,7 +63,7 @@ const BackToTop = styled.div`
   position: fixed;
   top: 90svh;
   /* right: -70px; */
-  right: ${(props) => (props.visible ? "-120px" : "-70px")};
+  right: ${(props) => (props.visible ? '-120px' : '-70px')};
   opacity: ${(props) => (props.visible ? 0 : 1)};
   background: -webkit-linear-gradient(
     120deg,
@@ -90,6 +87,10 @@ const BackToTop = styled.div`
 
   span {
     width: 50px;
+  }
+
+  @media (max-width: 700px) {
+    transform: scale(1.4);
   }
 `;
 const ArrowIcon = styled(FaArrowUp)`

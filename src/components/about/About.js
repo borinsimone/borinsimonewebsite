@@ -1,14 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import skillimg from "../../asset/Frame 45.png";
-import pullupimg from "../../asset/Pullups.svg";
-import {
-  FaMountain,
-  FaPaintBrush,
-  FaPlane,
-} from "react-icons/fa";
-import { FaMountainSun } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import React from 'react';
+import styled from 'styled-components';
+import skillimg from '../../asset/Frame 45.png';
+import pullupimg from '../../asset/Pullups.svg';
+import { FaMountain, FaPaintBrush, FaPlane } from 'react-icons/fa';
+import { FaMountainSun } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 
 function About({ aboutRef }) {
   return (
@@ -20,42 +16,34 @@ function About({ aboutRef }) {
           <Frame />
         </ImageContainer>
         <TextContainer>
-          <Paragraph>
-            Sono Simone Borin, un Web Developer e Designer
-            con una solida formazione ottenuta tramite
-            l'università online di Start2Impact e numerosi
-            corsi di specializzazione.
+          <Paragraph className='intro'>
+            Sono Simone Borin, un Web Developer e Designer con una solida
+            formazione ottenuta tramite l'università online di Start2Impact e
+            numerosi corsi di specializzazione.
           </Paragraph>
-          <Paragraph>
+          <Paragraph className='technic'>
             <span>Competenze Tecniche:</span>
-            Le mie competenze spaziano dall'HTML5 avanzato
-            al CSS3 e al framework ReactJS. Utilizzo queste
-            tecnologie per creare esperienze web
-            coinvolgenti e moderne.
+            Le mie competenze spaziano dall'HTML5 avanzato al CSS3 e al
+            framework ReactJS. Utilizzo queste tecnologie per creare esperienze
+            web coinvolgenti e moderne.
           </Paragraph>
-          <Paragraph>
+          <Paragraph className='creativity'>
             <span>Passione per il Disegno Creativo:</span>
-            Al di là del coding, nutro una grande passione
-            per il disegno creativo. Sono abile
-            nell'utilizzo di strumenti come Photoshop,
-            Illustrator, e Procreate per creare grafiche
-            accattivanti e manipolare immagini.
+            Al di là del coding, nutro una grande passione per il disegno
+            creativo. Sono abile nell'utilizzo di strumenti come Photoshop,
+            Illustrator, e Procreate per creare grafiche accattivanti e
+            manipolare immagini.
           </Paragraph>
-          <Paragraph>
+          <Paragraph className='design'>
             <span>Utilizzo di Strumenti di Design:</span>
-            Sfrutto Figma per il design, un potente
-            strumento di prototipazione, per creare
-            interfacce utente intuitive e ben progettate.
+            Sfrutto Figma per il design, un potente strumento di prototipazione,
+            per creare interfacce utente intuitive e ben progettate.
           </Paragraph>
-          <Paragraph>
-            <span>
-              Sinergia tra Competenze Tecniche e Creatività:
-            </span>
-            Questa sinergia tra le mie competenze tecniche e
-            la mia creatività nel design mi consente di
-            realizzare progetti digitali di alta qualità che
-            combinano estetica e funzionalità in modo
-            armonioso.
+          <Paragraph className='outro'>
+            <span>Sinergia tra Competenze Tecniche e Creatività:</span>
+            Questa sinergia tra le mie competenze tecniche e la mia creatività
+            nel design mi consente di realizzare progetti digitali di alta
+            qualità che combinano estetica e funzionalità in modo armonioso.
           </Paragraph>
         </TextContainer>
       </Section>
@@ -67,8 +55,7 @@ function About({ aboutRef }) {
       <Section>
         <Title>i miei interessi</Title>
         <InterestText>
-          Scopri qualcosa in più su di me cliccando le icone
-          qui sotto
+          Scopri qualcosa in più su di me cliccando le icone qui sotto
         </InterestText>
         <InterestContainer>
           <InterestIconBorder
@@ -161,10 +148,71 @@ const Frame = styled.div`
   z-index: 0;
 `;
 const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   width: 90%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'intro'
+    'technic'
+    'creativity'
+    'design'
+    'outro';
+
+  .intro {
+    grid-area: intro;
+  }
+
+  .technic {
+    grid-area: technic;
+  }
+
+  .creativity {
+    grid-area: creativity;
+  }
+
+  .design {
+    grid-area: design;
+  }
+
+  .outro {
+    grid-area: outro;
+  }
+
+  @media (min-width: 760px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'intro intro intro'
+      'technic creativity design'
+      'outro outro outro';
+
+    .intro {
+      grid-area: intro;
+    }
+
+    .technic {
+      grid-area: technic;
+    }
+
+    .creativity {
+      grid-area: creativity;
+    }
+
+    .design {
+      grid-area: design;
+    }
+
+    .outro {
+      grid-area: outro;
+    }
+  }
 `;
 const Paragraph = styled.p`
   text-align: center;

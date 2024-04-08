@@ -1,14 +1,8 @@
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import React from 'react';
+import styled from 'styled-components';
 
-function Card({
-  category,
-  preview,
-  name,
-  description,
-  link,
-}) {
+function Card({ category, preview, name, description, link }) {
   return (
     <Container>
       <Category>{category}</Category>
@@ -22,7 +16,7 @@ function Card({
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         href={link}
-        target="_blank"
+        target='_blank'
       >
         prova!
       </Btn>
@@ -34,7 +28,8 @@ function Card({
 export default Card;
 const Container = styled.div`
   width: 80vw;
-  min-height: 50svh;
+  max-width: 300px;
+  /* min-height: 30svh; */
   display: flex;
   flex-direction: column;
   align-items: center;
