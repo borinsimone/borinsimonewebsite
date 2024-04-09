@@ -1,18 +1,28 @@
-import { useInView } from 'framer-motion';
-import React, { useRef } from 'react';
-import styled, { css } from 'styled-components';
-import { useMediaQuery } from 'usehooks-ts';
+import { tab } from "@testing-library/user-event/dist/tab";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
+import styled, { css } from "styled-components";
+import { useMediaQuery } from "usehooks-ts";
+import uiImg from "../../asset/service/amelie-mourichon-sv8oOQaUb-o-unsplash.jpg";
+import codingImg from "../../asset/service/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg";
+import brandImg from "../../asset/service/diego-ph-fIq0tET6llw-unsplash.jpg";
 function Services({ servicesRef }) {
-  const mobileSize = useMediaQuery('(max-width: 768px)');
-  const tabletSize = useMediaQuery('(min-width: 768px)');
-  const desktopSize = useMediaQuery('(min-width: 1025px)');
+  const mobileSize = useMediaQuery("(max-width: 768px)");
+  const tabletSize = useMediaQuery("(min-width: 768px)");
+  const desktopSize = useMediaQuery("(min-width: 1025px)");
 
   const firstSectionRef = useRef(null);
-  const firstSectionInView = useInView(firstSectionRef);
+  const firstSectionInView = useInView(firstSectionRef, {
+    once: true,
+  });
   const secondSectionRef = useRef(null);
-  const secondSectionInView = useInView(secondSectionRef);
+  const secondSectionInView = useInView(secondSectionRef, {
+    once: true,
+  });
   const thirdSectionRef = useRef(null);
-  const thirdSectionInView = useInView(thirdSectionRef);
+  const thirdSectionInView = useInView(thirdSectionRef, {
+    once: true,
+  });
   return (
     <Container ref={servicesRef}>
       <Title>servizi</Title>
@@ -23,57 +33,127 @@ function Services({ servicesRef }) {
       </div> */}
       {mobileSize && (
         <MobileServicesContainer>
-          <ServiceBox>
-            <ServiceNum>01.</ServiceNum>
-            <ServiceTitle>ux/ui design</ServiceTitle>
-            <ServiceText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit non
-              saepe maxime officia dignissimos. Exercitationem numquam assumenda
-              placeat ea eos.
-            </ServiceText>
-          </ServiceBox>
-          <ServiceBox></ServiceBox>
-          <ServiceBox></ServiceBox>
-        </MobileServicesContainer>
-      )}
-      {tabletSize && (
-        <ServicesContainerTablet>
           <ServiceBox
-            main={true}
             ref={firstSectionRef}
+            as={motion.div}
             style={{
-              transform: firstSectionInView ? 'none' : 'translateY(200px)',
-              opacity: firstSectionInView ? 1 : 0,
-              transition: '500ms ease-out',
+              transform: firstSectionInView
+                ? "none"
+                : "translateX(-300px)",
             }}
           >
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
             <ServiceText>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit non
-              saepe maxime officia dignissimos. Exercitationem numquam assumenda
-              placeat ea eos.
+              Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Odit non saepe maxime
+              officia dignissimos. Exercitationem numquam
+              assumenda placeat ea eos.
             </ServiceText>
           </ServiceBox>
           <ServiceBox
-            side={true}
             ref={secondSectionRef}
+            as={motion.div}
             style={{
-              transform: secondSectionInView ? 'none' : 'translateY(200px)',
-              opacity: secondSectionInView ? 1 : 0,
-              transition: '500ms ease-out',
+              transform: secondSectionInView
+                ? "none"
+                : "translateX(300px)",
             }}
           ></ServiceBox>
           <ServiceBox
-            side={true}
             ref={thirdSectionRef}
+            as={motion.div}
             style={{
-              transform: thirdSectionInView ? 'none' : 'translateY(200px)',
-              opacity: thirdSectionInView ? 1 : 0,
-              transition: '500ms ease-out',
+              transform: thirdSectionInView
+                ? "none"
+                : "translateX(-300px)",
             }}
           ></ServiceBox>
-          <Line />
+        </MobileServicesContainer>
+      )}
+      {tabletSize && (
+        <ServicesContainerTablet>
+          <ServiceBox
+            className="uiux"
+            ref={firstSectionRef}
+            as={motion.div}
+            style={{
+              transform: firstSectionInView
+                ? "none"
+                : "translateX(-300px)",
+            }}
+          >
+            <ServiceNum>01.</ServiceNum>
+            <ServiceTitle>ux/ui design</ServiceTitle>
+            <ServiceText>
+              Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Odit non saepe maxime
+              officia dignissimos. Exercitationem numquam
+              assumenda placeat ea eos.
+            </ServiceText>
+          </ServiceBox>
+          <ServiceBox
+            className="coding"
+            ref={secondSectionRef}
+            as={motion.div}
+            style={{
+              transform: secondSectionInView
+                ? "none"
+                : "translateX(300px)",
+            }}
+          >
+            <ServiceNum>02.</ServiceNum>
+            <ServiceTitle>coding</ServiceTitle>
+            <ServiceText>
+              Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Odit non saepe maxime
+              officia dignissimos. Exercitationem numquam
+              assumenda placeat ea eos.
+            </ServiceText>
+          </ServiceBox>
+          <ServiceBox
+            className="brandIdentity"
+            ref={thirdSectionRef}
+            as={motion.div}
+            style={{
+              transform: thirdSectionInView
+                ? "none"
+                : "translateX(-300px)",
+            }}
+          ></ServiceBox>
+          <img
+            className="uiuxImg"
+            src={uiImg}
+            style={{
+              transform: firstSectionInView
+                ? "none"
+                : "translateX(-700px)",
+              opacity: firstSectionInView ? "1" : "0",
+            }}
+            alt="img"
+          />
+          <img
+            className="codingImg"
+            src={codingImg}
+            style={{
+              transform: secondSectionInView
+                ? "none"
+                : "translateX(700px)",
+              opacity: secondSectionInView ? "1" : "0",
+            }}
+            alt="img"
+          />
+          <img
+            className="identityImg"
+            src={brandImg}
+            style={{
+              transform: thirdSectionInView
+                ? "none"
+                : "translateX(-700px)",
+              opacity: thirdSectionInView ? "1" : "0",
+            }}
+            alt="img"
+          />
         </ServicesContainerTablet>
       )}
     </Container>
@@ -84,7 +164,8 @@ export default Services;
 const Container = styled.div`
   width: 100%;
   height: fit-content;
-  background-color: #141518;
+  background-color: #21242a;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,6 +196,7 @@ const MobileServicesContainer = styled.div`
 `;
 const ServiceBox = styled.div`
   width: 70%;
+  max-width: 700px;
   aspect-ratio: 1;
   background: -webkit-linear-gradient(
     -60deg,
@@ -130,20 +212,9 @@ const ServiceBox = styled.div`
   font-size: 1.4rem;
   font-weight: 900;
   align-items: center;
-  @media (min-width: 700px) {
-    width: 40%;
-    &:nth-child(odd) {
-      margin-right: auto;
-
-      margin-left: 5vw;
-    }
-    &:nth-child(even) {
-      margin-left: auto;
-      margin-right: 5vw;
-    }
-  }
-  ${(props) => props.main && css``};
-  ${(props) => props.side && css``};
+  transition: 300ms;
+  position: relative;
+  box-shadow: rgba(44, 211, 201, 1) 0px 5px 15px 10px;
 `;
 const ServiceNum = styled.div``;
 const ServiceTitle = styled.div`
@@ -155,13 +226,78 @@ const ServiceText = styled.div`
   text-align: center;
 `;
 const ServicesContainerTablet = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "uiux uiuxImg"
+    "codingImg coding"
+    "brandIdentity identityImg";
+
+  .uiux {
+    grid-area: uiux;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+  }
+
+  .coding {
+    grid-area: coding;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+  }
+
+  .brandIdentity {
+    grid-area: brandIdentity;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+  }
+
+  .uiuxImg {
+    grid-area: uiuxImg;
+    justify-self: center;
+    align-self: center;
+    height: 300px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 0;
+    transition: 300ms;
+    transition-delay: 200ms;
+  }
+
+  .codingImg {
+    grid-area: codingImg;
+    justify-self: center;
+    align-self: center;
+    height: 300px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 0;
+    transition: 300ms;
+    transition-delay: 200ms;
+  }
+
+  .identityImg {
+    grid-area: identityImg;
+    justify-self: center;
+    align-self: center;
+    height: 300px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 0;
+    transition: 300ms;
+    transition-delay: 200ms;
+  }
+  img {
+    box-shadow: rgba(44, 211, 201, 1) 0px 5px 15px 10px;
+    @media (max-width: 1024px) {
+      height: 200px !important;
+    }
+  }
 `;
 const Line = styled.div`
   position: absolute;

@@ -45,7 +45,8 @@ export default Contact;
 const Container = styled.div`
   width: 100%;
   height: fit-content;
-  background-color: #141518;
+  background-color: #21242a;
+
   display: flex;
   flex-direction: column;
   align-items: center;

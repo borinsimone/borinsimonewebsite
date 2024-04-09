@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import Card from './Card';
-import sudokuImg from '../../asset/SudokuBreakerIcon.svg';
-import NewCard from './NewCard';
+import React from "react";
+import styled from "styled-components";
+import Card from "./Card";
+import sudokuImg from "../../asset/SudokuBreakerIcon.svg";
+import NewCard from "./NewCard";
 function Projects({ projectRef }) {
   return (
     <Container ref={projectRef}>
@@ -25,25 +25,28 @@ function Projects({ projectRef }) {
       description="Design per una applicazione per la gestione domotica"
     />
   */}
-      <Header>Sfoglia e prova alcuni dei progetti a cui ho lavorato</Header>
-      <div className='cardContainer'>
+      <Header>
+        Sfoglia e prova alcuni dei progetti a cui ho
+        lavorato
+      </Header>
+      <div className="cardContainer">
         <NewCard
-          category='coding'
-          name='SuokuBreaker'
-          description='Una simpatica WebApp che permette di risolvere istantaneamente tutti i sudoku'
-          link='https://borinsimone.github.io/sudokubreaker/'
+          category="coding"
+          name="SuokuBreaker"
+          description="Una simpatica WebApp che permette di risolvere istantaneamente tutti i sudoku"
+          link="https://borinsimone.github.io/sudokubreaker/"
           preview={sudokuImg}
         />
 
         <NewCard
-          category='coding'
-          name='WoWChat'
-          description='Una WebApp di messaggistica, creata con ReactJS e Firebase database'
+          category="coding"
+          name="WoWChat"
+          description="Una WebApp di messaggistica, creata con ReactJS e Firebase database"
         />
         <NewCard
-          category='design'
-          name='HiHome'
-          description='Design per una applicazione per la gestione domotica'
+          category="design"
+          name="HiHome"
+          description="Design per una applicazione per la gestione domotica"
         />
       </div>
 
@@ -59,7 +62,8 @@ const Container = styled.div`
   width: 100%;
   height: fit-content;
   padding: 20px 10px;
-  background-color: #141518;
+  background-color: #21242a;
+
   /* display: flex;
   flex-direction: column;
   align-items: center;
