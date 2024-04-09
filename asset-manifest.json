@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.55d7a0a7.js",
-    "static/media/diego-ph-fIq0tET6llw-unsplash.jpg": "/static/media/diego-ph-fIq0tET6llw-unsplash.2f3cdd39ec1b042fca6e.jpg",
-    "static/media/amelie-mourichon-sv8oOQaUb-o-unsplash.jpg": "/static/media/amelie-mourichon-sv8oOQaUb-o-unsplash.ff3ef3ee104cf7df66aa.jpg",
-    "static/media/Group 78bg.png": "/static/media/Group 78bg.dfe9bdd34e4cd6d1e5b9.png",
-    "static/media/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg": "/static/media/kevin-ku-w7ZyuGYNpRQ-unsplash.cbc94405d8ec34608d22.jpg",
-    "static/media/Group 86.png": "/static/media/Group 86.316d9bcde857b4777755.png",
-    "static/media/Frame 45.png": "/static/media/Frame 45.b3f23466cecd5f1b50aa.png",
-    "static/media/SudokuBreakerIcon.svg": "/static/media/SudokuBreakerIcon.c6976e1b4a38bd9735061012a235a2db.svg",
-    "static/media/Pullups.svg": "/static/media/Pullups.8f11afda1610b32e5c957cc74bddb5ba.svg",
-    "index.html": "/index.html",
-    "static/media/wave.svg": "/static/media/wave.7f6d00981194766dacd1f8e4d04ab57c.svg",
-    "main.55d7a0a7.js.map": "/static/js/main.55d7a0a7.js.map"
+    "main.js": "/borinsimone/borinsimonewebsite/static/js/main.4ad37157.js",
+    "static/media/diego-ph-fIq0tET6llw-unsplash.jpg": "/borinsimone/borinsimonewebsite/static/media/diego-ph-fIq0tET6llw-unsplash.2f3cdd39ec1b042fca6e.jpg",
+    "static/media/amelie-mourichon-sv8oOQaUb-o-unsplash.jpg": "/borinsimone/borinsimonewebsite/static/media/amelie-mourichon-sv8oOQaUb-o-unsplash.ff3ef3ee104cf7df66aa.jpg",
+    "static/media/Group 78bg.png": "/borinsimone/borinsimonewebsite/static/media/Group 78bg.dfe9bdd34e4cd6d1e5b9.png",
+    "static/media/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg": "/borinsimone/borinsimonewebsite/static/media/kevin-ku-w7ZyuGYNpRQ-unsplash.cbc94405d8ec34608d22.jpg",
+    "static/media/Group 86.png": "/borinsimone/borinsimonewebsite/static/media/Group 86.316d9bcde857b4777755.png",
+    "static/media/Frame 45.png": "/borinsimone/borinsimonewebsite/static/media/Frame 45.b3f23466cecd5f1b50aa.png",
+    "static/media/SudokuBreakerIcon.svg": "/borinsimone/borinsimonewebsite/static/media/SudokuBreakerIcon.c6976e1b4a38bd9735061012a235a2db.svg",
+    "static/media/Pullups.svg": "/borinsimone/borinsimonewebsite/static/media/Pullups.8f11afda1610b32e5c957cc74bddb5ba.svg",
+    "index.html": "/borinsimone/borinsimonewebsite/index.html",
+    "static/media/wave.svg": "/borinsimone/borinsimonewebsite/static/media/wave.7f6d00981194766dacd1f8e4d04ab57c.svg",
+    "main.4ad37157.js.map": "/borinsimone/borinsimonewebsite/static/js/main.4ad37157.js.map"
   },
   "entrypoints": [
-    "static/js/main.55d7a0a7.js"
+    "static/js/main.4ad37157.js"
   ]
 }
