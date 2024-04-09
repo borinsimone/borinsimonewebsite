@@ -45,10 +45,12 @@ function Services({ servicesRef }) {
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
             <ServiceText>
-              Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Odit non saepe maxime
-              officia dignissimos. Exercitationem numquam
-              assumenda placeat ea eos.
+              Il design UI/UX crea interfacce digitali
+              intuitive. Collaborando con il cliente,
+              traduciamo le loro esigenze in soluzioni di
+              design efficaci, mirando a migliorare
+              l'esperienza dell'utente e ottenere risultati
+              positivi per il marchio.
             </ServiceText>
           </ServiceBox>
           <ServiceBox
@@ -86,10 +88,12 @@ function Services({ servicesRef }) {
             <ServiceNum>01.</ServiceNum>
             <ServiceTitle>ux/ui design</ServiceTitle>
             <ServiceText>
-              Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Odit non saepe maxime
-              officia dignissimos. Exercitationem numquam
-              assumenda placeat ea eos.
+              Il design UI/UX crea interfacce digitali
+              intuitive. Collaborando con il cliente,
+              traduciamo le loro esigenze in soluzioni di
+              design efficaci, mirando a migliorare
+              l'esperienza dell'utente e ottenere risultati
+              positivi per il marchio.
             </ServiceText>
           </ServiceBox>
           <ServiceBox
@@ -190,7 +194,7 @@ const Title = styled.div`
 const MobileServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   width: 100%;
   align-items: center;
 `;

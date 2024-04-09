@@ -42,6 +42,7 @@ function Projects({ projectRef }) {
           category="coding"
           name="WoWChat"
           description="Una WebApp di messaggistica, creata con ReactJS e Firebase database"
+          link="https://wowchat-92053.firebaseapp.com"
         />
         <NewCard
           category="design"
@@ -118,7 +119,7 @@ const Header = styled.div`
   );
   width: 80%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.4rem;
   padding: 20px;
   border-radius: 10px;
 `;

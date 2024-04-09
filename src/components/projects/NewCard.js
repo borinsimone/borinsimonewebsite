@@ -1,16 +1,20 @@
-import { motion } from 'framer-motion';
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 
-function NewCard({ category, preview, name, description, link }) {
-  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+function NewCard({
+  category,
+  preview,
+  name,
+  description,
+  link,
+}) {
+  const [descriptionExpanded, setDescriptionExpanded] =
+    useState(false);
   return (
     <Container>
       <Category>{category}</Category>
-      <CardImage
-        src={preview}
-        alt='cardImage'
-      />
+      <CardImage src={preview} alt="cardImage" />
       <Name>{name}</Name>
       <Description
         onClick={() => {
@@ -18,14 +22,14 @@ function NewCard({ category, preview, name, description, link }) {
         }}
         expanded={descriptionExpanded}
       >
-        <div className='utility'>{description}</div>
+        <div className="utility">{description}</div>
       </Description>
       <Btn
         as={motion.a}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         href={link}
-        target='_blank'
+        target="_blank"
       >
         prova!
       </Btn>
@@ -36,6 +40,7 @@ function NewCard({ category, preview, name, description, link }) {
 export default NewCard;
 const Container = styled.div`
   color: white;
+  background-color: rgba(0, 0, 0, 0.2);
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -45,10 +50,13 @@ const Container = styled.div`
   border-radius: 10px;
   padding: 10px;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     inset: -5px; /* control the spread */
-    transform: translate(10px, 8px); /* control the offsets */
+    transform: translate(
+      10px,
+      8px
+    ); /* control the offsets */
     z-index: -1; /* place the element behind */
     background: -webkit-linear-gradient(
       120deg,
