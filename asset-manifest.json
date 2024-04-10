@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/borinsimonewebsite/static/js/main.6e90b41b.js",
+    "main.js": "/borinsimonewebsite/static/js/main.b67762eb.js",
     "static/media/diego-ph-fIq0tET6llw-unsplash.jpg": "/borinsimonewebsite/static/media/diego-ph-fIq0tET6llw-unsplash.2f3cdd39ec1b042fca6e.jpg",
     "static/media/amelie-mourichon-sv8oOQaUb-o-unsplash.jpg": "/borinsimonewebsite/static/media/amelie-mourichon-sv8oOQaUb-o-unsplash.ff3ef3ee104cf7df66aa.jpg",
     "static/media/Group 78bg.png": "/borinsimonewebsite/static/media/Group 78bg.dfe9bdd34e4cd6d1e5b9.png",
@@ -11,9 +11,9 @@
     "static/media/Pullups.svg": "/borinsimonewebsite/static/media/Pullups.8f11afda1610b32e5c957cc74bddb5ba.svg",
     "index.html": "/borinsimonewebsite/index.html",
     "static/media/wave.svg": "/borinsimonewebsite/static/media/wave.7f6d00981194766dacd1f8e4d04ab57c.svg",
-    "main.6e90b41b.js.map": "/borinsimonewebsite/static/js/main.6e90b41b.js.map"
+    "main.b67762eb.js.map": "/borinsimonewebsite/static/js/main.b67762eb.js.map"
   },
   "entrypoints": [
-    "static/js/main.6e90b41b.js"
+    "static/js/main.b67762eb.js"
   ]
 }
