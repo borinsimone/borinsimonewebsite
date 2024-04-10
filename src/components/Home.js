@@ -187,6 +187,7 @@ function Home({
           </BtnContainer>
         </span>
         <HomeBg
+          className="bg"
           src={avatar}
           as={motion.img}
           initial={{ scale: 0 }}
@@ -235,6 +236,10 @@ const Container = styled.div`
     position: relative;
     width: 100vw;
     background-color: #fff;
+    @media (orientation: landscape) {
+      transform: scaleY(0.6);
+      transform-origin: bottom;
+    }
   }
   .wave {
     position: absolute;
@@ -427,6 +432,19 @@ const Body = styled.div`
     justify-content: space-evenly;
     gap: 0;
   }
+  @media (orientation: landscape) {
+    flex-direction: row;
+    .bg {
+      width: 200px;
+    }
+    div,
+    span {
+      font-size: 1rem;
+      span {
+        font-size: 1.3rem;
+      }
+    }
+  }
 `;
 const Text = styled.div`
   color: white;
@@ -448,7 +466,7 @@ const Text = styled.div`
   /* background-color: #fff; */
 `;
 const HandEmoji = styled.img`
-  height: 3rem;
+  height: 2rem;
   margin: 0 0.6rem;
 `;
 const SubText = styled.div`
