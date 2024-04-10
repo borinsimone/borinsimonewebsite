@@ -222,6 +222,7 @@ const Container = styled.div`
   align-items: center; */
 
   background-color: #21242a;
+  height: 100vh;
   height: 100svh;
   width: 100%;
   display: flex;
@@ -406,6 +407,7 @@ const MenuLink = styled.div`
   font-size: 1.7rem;
 `;
 const HomeBg = styled.img`
+  width: 40vw;
   @media (min-width: 700px) {
   }
   @media (min-width: 1025px) {
