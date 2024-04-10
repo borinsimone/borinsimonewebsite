@@ -189,9 +189,9 @@ function Home({
         <HomeBg
           src={avatar}
           as={motion.img}
-          initial={{ y: 400 }}
-          animate={{ y: -0 }}
-          exit={{ y: 400 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0 }}
           transition={{ delay: 1 }}
         />
       </Body>

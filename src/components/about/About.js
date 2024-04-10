@@ -193,7 +193,7 @@ const TextContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 40px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "intro"
@@ -223,7 +223,7 @@ const TextContainer = styled.div`
   }
 
   @media (min-width: 760px) {
-    width: 40vw;
+    /* width: 40vw; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.5fr 1fr 1fr;
@@ -254,7 +254,7 @@ const TextContainer = styled.div`
     padding: 10px;
     border-radius: 10px;
     box-shadow: rgba(44, 211, 201, 1) 0px 5px 15px;
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 `;
 const Paragraph = styled.p`
