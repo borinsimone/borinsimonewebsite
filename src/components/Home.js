@@ -310,7 +310,8 @@ const Navbar = styled.nav`
   font-family: var(--primary-text);
   z-index: 102;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  padding: 0 10px;
 `;
 const DesktopLinks = styled.div`
   @media (max-width: 1025px) {

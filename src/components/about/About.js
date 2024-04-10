@@ -162,6 +162,9 @@ const ImageContainer = styled.div`
   max-width: 500px;
   aspect-ratio: 1;
   margin-bottom: 20px;
+  @media (orientation: landscape) {
+    width: 300px;
+  }
 `;
 const Photo = styled.div`
   background-color: #000;
